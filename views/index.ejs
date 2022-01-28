@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,25 @@
     <link rel="stylesheet" href="style.css">
     <title>To Do List</title>
 </head>
+
 <body>
-    <h1>Hello World, EJS</h1>
+
+    <form action="/create" method="post">
+        <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
+        <button id="addButton" type="submit">Adicionar</button>
+    </form>
+
+
+    <ul>
+        <% tasksList.forEach((task)=>{ %>
+            <li>
+                <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %>
+            </li>
+        <% }) %>
+    </ul>
+
 
     <script src="script.js"></script>
 </body>
+
 </html>
