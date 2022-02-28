@@ -13,10 +13,7 @@
 <body>
 
     <% if (message != "") {%>
-    <section class="message message-<%= type %>">
-        <p><%= message %></p>
-        <span id="close-message"><i class="bi bi-x"></i></span>
-    </section>
+        <%- include('./components/messages', {message: message, type: type})  %>
     <% } %>
 
     <header>
